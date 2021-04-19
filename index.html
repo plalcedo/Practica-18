@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Assets/css/stylesheet.css">
+    <title>Reloj</title>
+</head>
+
+<body>
+    <audio src="Assets/audio/alarma.mp3" id="audio"></audio>
+
+    <div id="wrapper">
+        <div id="button">
+            <button>Test</button>
+            <button>Detener</button>
+        </div>
+
+        <div class="digits">
+            <div id="hora"></div>
+            <div class="dots on">:</div>
+            <div id="minuto"></div>
+            <div id="ampm">
+                <div id="am">AM</div>
+                <div id="pm">PM</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="alarmBox" style="display: none;">
+        <input type="time" name="" id="timeInput">
+        <button id="setAlarm" class="btn btnWhite"><i class="fas fa-check"></i></button>
+    </div>
+
+    <button id="newAlarm" class="btn btnWhite"><i class="fas fa-bell"></i></button>
+
+    <script src="https://kit.fontawesome.com/bd4bac141d.js" crossorigin="anonymous"></script>
+    <script src="Assets/js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+@font-face {
+    font-family: 'DSDIGI';
+    src: url('../fonts/DSDIGI.eot');
+    src: local('DSDIGI'), url('../fonts/DSDIGI.woff') format('woff'), url('../fonts/DSDIGI.ttf') format('truetype');
+}
+
+.fontsforweb_fontid_1091 {
+    font-family: 'DSDIGI' !important;
+}
+
+
+/*font-family: 'DSDIGI';*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+}
+
+#wrapper {
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#ampm {
+    display: flex;
+    flex-direction: column;
+    font-size: 4rem;
+}
+
+#newAlarm {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    z-index: 999;
+}
+
+.digits {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: 'DSDIGI';
+    font-size: 10rem;
+    color: white;
+    text-shadow: 0px 0px 30px white;
+}
+
+.on {
+    color: white;
+    text-shadow: 0px 0px 30px white;
+}
+
+.off {
+    color: rgba(255, 255, 255, 0.404);
+}
+
+.btn {
+    border: white 3px solid;
+    background-color: transparent;
+    color: white;
+    font-size: 2rem;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
+
+.btn:hover {
+    background-color: white;
+    color: black;
+    transition: 0.5s;
+}
