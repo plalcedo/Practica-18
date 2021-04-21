@@ -4,6 +4,7 @@
     src: local('DSDIGI'), url('../fonts/DSDIGI.woff') format('woff'), url('../fonts/DSDIGI.ttf') format('truetype');
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Zen+Dots&display=swap');
 .fontsforweb_fontid_1091 {
     font-family: 'DSDIGI' !important;
 }
@@ -44,6 +45,52 @@ body {
     z-index: 999;
 }
 
+#alarmBox {
+    width: 100%;
+    position: fixed;
+    bottom: 5%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+}
+
+#alarmBox input {
+    background-color: rgba(128, 128, 128, 0.815);
+    color: white;
+    border-radius: 10px;
+    font-size: 2rem;
+    border: transparent;
+    margin: 20px;
+    padding: 10px;
+}
+
+#stopAlarm {
+    margin: auto;
+    justify-content: center;
+}
+
+#alarmList {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 5%;
+    left: 5%;
+}
+
+#cuadroAlarmas {
+    width: 30%;
+    border: white 2px solid;
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    color: white;
+    z-index: 9999;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 10px;
+    padding: 5px;
+}
+
 .digits {
     display: flex;
     flex-direction: row;
@@ -78,4 +125,78 @@ body {
     background-color: white;
     color: black;
     transition: 0.5s;
+}
+
+.alarmBoxHidden {
+    display: none;
+}
+
+.alarmBoxDeployed {
+    display: flex;
+}
+
+.btnYellow {
+    font-family: 'Zen Dots', cursive;
+    width: 20%;
+    border: transparent;
+    background-color: goldenrod;
+    color: white;
+    border-radius: 20px;
+    position: fixed;
+    top: 20%;
+    padding: 20px;
+    justify-content: center;
+}
+
+.btnYellow:hover {
+    background-color: rgba(218, 165, 32, 0.664);
+    transition: 0.5s;
+}
+
+.btnYellowView {
+    width: 80px;
+    height: 80px;
+    border: transparent;
+    background-color: goldenrod;
+    color: white;
+    border-radius: 50%;
+    position: fixed;
+    top: 5%;
+    left: 5%;
+    padding: 20px;
+    justify-content: center;
+    font-size: 2rem;
+    align-items: center;
+}
+
+.btnYellowView:hover {
+    background-color: rgba(218, 165, 32, 0.664);
+    color: black;
+    transition: 0.5s;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.d-none {
+    display: none;
+}
+
+@keyframes hide {
+    from {
+        bottom: 5%;
+    }
+    to {
+        top: 150%;
+    }
+}
+
+@keyframes show {
+    from {
+        top: 150%;
+    }
+    to {
+        bottom: 5%;
+    }
 }
