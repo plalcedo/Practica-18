@@ -33,8 +33,62 @@ document.querySelector("#newAlarm").addEventListener("click", () => {
 
 document.querySelector("#setAlarm").addEventListener("click", () => {
     console.log(timeInput.value);
+    /* Verificación para que el campo de la alarma no se encuentre vacío */
+
     if (timeInput.value != "") {
         alarmas.push(timeInput.value);
+
+        /* Creación de elementos y variables */
+        var numeroBoton = alarmas.length - 1;
+        var div = document.createElement("div");
+        var p = document.createElement("p");
+        var button = document.createElement("button");
+
+        /* Ajuste de la hora militar a AM o PM */
+
+        var hora = String(timeInput.value).substring(0, 2)
+        var minutos = String(timeInput.value).substring(3, 5);
+
+        if (hora >= 10) {
+            var newHora = (((Number(hora) + 11) % 12) + 1);
+            if (newHora < 10) {
+                newHora = "0" + String((((Number(hora) + 11) % 12) + 1));
+            }
+        } else {
+            var newHora = hora;
+        }
+
+        if (hora == "00") {
+            var newHora = 12;
+        }
+
+        if (Number(hora) >= 0 && Number(hora < 12)) {
+            var ampm = "a.m.";
+        } else {
+            var ampm = "p.m.";
+        }
+
+        var letreroAlarma = String(newHora) + ":" + String(minutos) + " " + ampm;
+
+        /* Añadir clases y agregarlas a la pantalla */
+
+        div.classList.add("rowAlarma");
+        p.innerHTML = letreroAlarma;
+        p.classList.add("alarmas");
+        button.innerHTML = "X";
+        button.classList.add("btnEliminar");
+        button.setAttribute("id", numeroBoton);
+        div.appendChild(p);
+        div.appendChild(button);
+        document.querySelector("#alarmas").appendChild(div);
+
+
+        /* Eliminar una alarma */
+
+        button.onclick = function() {
+            alarmas.splice(numeroBoton);
+            document.querySelector("#alarmas").removeChild(div);
+        };
     }
 
     console.log(alarmas);
@@ -51,15 +105,9 @@ document.querySelector("#btnView").addEventListener("click", () => {
         document.querySelector("#cuadroAlarmas").classList.add("d-none");
     }
 
-    var cuadroAlarmas = document.getElementById("#cuadroAlarmas");
-    var p = document.createElement("p");
-    for (const alarma in alarmas) {
-        p.innerHTML = alarma;
-        cuadroAlarmas.appendChild(p);
-        console.log("Agregue una");
-    }
-
 });
+
+
 
 /* Ejecutar la alarma */
 
@@ -149,4 +197,9 @@ function blinkDots() {
         document.querySelector(".dots").classList.remove("on");
         document.querySelector(".dots").classList.add("off");
     }
+}
+
+function deleteAlarm(index) {
+    alarmas.splice(index);
+
 }

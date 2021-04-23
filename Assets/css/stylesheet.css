@@ -88,7 +88,19 @@ body {
     z-index: 9999;
     font-family: 'Roboto', sans-serif;
     border-radius: 10px;
-    padding: 5px;
+    padding: 10px;
+    flex-direction: column;
+    background-color: rgba(128, 128, 128, 0.24);
+}
+
+#cuadroAlarmas p {
+    padding-bottom: 10px;
+}
+
+#alarmas {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
 }
 
 .digits {
@@ -181,6 +193,29 @@ body {
 
 .d-none {
     display: none;
+}
+
+.alarmas {
+    padding: 10px;
+}
+
+.btnEliminar {
+    border: transparent;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 0, 0, 0.404);
+    border-radius: 10px;
+}
+
+.btnEliminar:hover {
+    background-color: rgba(255, 0, 0, 0.514);
+}
+
+.rowAlarma {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 @keyframes hide {
