@@ -103,6 +103,20 @@ body {
     flex-direction: column;
 }
 
+#notificacion {
+    position: absolute;
+    width: 10%;
+    height: auto;
+    padding: 20px;
+    background: goldenrod;
+    bottom: 10%;
+    left: 5%;
+    text-align: center;
+    color: white;
+    border-radius: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
 .digits {
     display: flex;
     flex-direction: row;

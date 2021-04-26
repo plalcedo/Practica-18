@@ -82,6 +82,9 @@ document.querySelector("#setAlarm").addEventListener("click", () => {
         div.appendChild(button);
         document.querySelector("#alarmas").appendChild(div);
 
+        /* Notificación */
+        notificacion();
+
 
         /* Eliminar una alarma */
 
@@ -202,4 +205,15 @@ function blinkDots() {
 function deleteAlarm(index) {
     alarmas.splice(index);
 
+}
+
+function notificacion() {
+    setTimeout(function() {
+        document.querySelector("#notificacion").classList.remove("d-none");
+        document.querySelector("#notificacion").classList.add("d-flex");
+    }, 300);
+    setTimeout(function() {
+        document.querySelector("#notificacion").classList.remove("d-flex");
+        document.querySelector("#notificacion").classList.add("d-none");
+    }, 2000);
 }
